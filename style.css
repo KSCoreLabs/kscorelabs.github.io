@@ -106,7 +106,8 @@ nav {
 
 /* Hero Section */
 .hero {
-    min-height: 100vh;
+    height: 100svh;          /* fixed height — never grows/shrinks with content */
+    min-height: 560px;       /* floor for very small screens */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,13 +115,14 @@ nav {
     text-align: center;
     padding: 100px 5% 60px;
     position: relative;
-    overflow: hidden;
+    overflow: hidden;        /* contain any internal reflow */
 }
 
 @media (max-width: 768px) {
     .hero {
-        min-height: 100svh;
-        padding: 90px 5% 50px;
+        height: 100svh;
+        min-height: 480px;
+        padding: 90px 5% 40px;
         justify-content: flex-start;
         padding-top: 90px;
     }
@@ -129,15 +131,16 @@ nav {
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    /* extend slightly beyond hero bounds so blur edges are clipped */
+    inset: -20px;
     background-image: url('Images/IMG_20260423_175306.png');
     background-size: cover;
     background-position: center;
     filter: blur(8px) brightness(0.3);
     z-index: -1;
+    /* own compositing layer — prevents repaint when text changes */
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .hero-badge {
@@ -157,6 +160,8 @@ nav {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     max-width: 600px;
+    /* Reserve height for 2 lines so the typewriter never causes layout shift */
+    min-height: 2.4em;
 }
 
 .hero-static {
@@ -222,6 +227,7 @@ nav {
     
     .hero h1 {
         font-size: 3rem;
+        min-height: 2.4em;
     }
 
     .hero-static {
@@ -251,6 +257,8 @@ nav {
         font-size: 2rem;
         margin-bottom: 0.8rem;
         max-width: 100%;
+        /* 3em covers all phrases even when they wrap on narrow mobile */
+        min-height: 3em;
     }
 
     .hero-static {
