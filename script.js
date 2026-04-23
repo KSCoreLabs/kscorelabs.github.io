@@ -34,3 +34,50 @@ function reveal() {
 window.addEventListener('load', reveal);
 // Trigger on scroll
 window.addEventListener('scroll', reveal);
+
+// Typewriter Effect
+(function () {
+    const phrases = [
+        'Protect Your Privacy.',
+        'Secure Your Device.',
+        'Put You In Control.',
+    ];
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const TYPE_SPEED = 70;
+    const DELETE_SPEED = 40;
+    const PAUSE_AFTER_TYPE = 1800;
+    const PAUSE_AFTER_DELETE = 400;
+
+    function tick() {
+        const current = phrases[phraseIndex];
+
+        if (!isDeleting) {
+            el.textContent = current.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === current.length) {
+                isDeleting = true;
+                setTimeout(tick, PAUSE_AFTER_TYPE);
+                return;
+            }
+        } else {
+            el.textContent = current.slice(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(tick, PAUSE_AFTER_DELETE);
+                return;
+            }
+        }
+
+        setTimeout(tick, isDeleting ? DELETE_SPEED : TYPE_SPEED);
+    }
+
+    // Small delay before starting so page loads first
+    setTimeout(tick, 800);
+}());
