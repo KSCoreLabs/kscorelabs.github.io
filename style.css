@@ -855,6 +855,59 @@ section {
     max-width: 560px;
 }
 
+/* Founder social icons */
+.founder-social {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.founder-social-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(76, 201, 240, 0.25);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.founder-social-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.founder-social-icon i {
+    position: relative;
+    z-index: 1;
+}
+
+.founder-social-icon:hover {
+    color: #fff;
+    border-color: var(--primary);
+    transform: translateY(-4px) scale(1.15);
+    box-shadow: 0 8px 20px rgba(76, 201, 240, 0.35);
+}
+
+.founder-social-icon:hover::before {
+    opacity: 1;
+}
+
 /* Stats row */
 .founder-stats {
     display: flex;
