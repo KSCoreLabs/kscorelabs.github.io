@@ -133,7 +133,7 @@ nav {
     position: absolute;
     /* extend slightly beyond hero bounds so blur edges are clipped */
     inset: -20px;
-    background-image: url('Images/IMG_20260423_175306.png');
+    background-image: url('Images/IMG_20260423_175306.webp');
     background-size: cover;
     background-position: center;
     filter: blur(8px) brightness(0.3);
@@ -352,66 +352,110 @@ section {
     margin-right: auto;
 }
 
-/* Works / Projects */
+/* Works / Projects — compact grid cards */
 .projects-grid {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 24px;
+    border-radius: 20px;
     overflow: hidden;
-    max-width: 1000px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    transition: transform 0.4s, box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    cursor: pointer;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    border-color: rgba(76, 201, 240, 0.35);
 }
 
-.project-image {
-    padding: 2rem;
+/* Square image banner at the top */
+.project-card-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(135deg, rgba(76,201,240,0.12), rgba(67,97,238,0.12));
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(76, 201, 240, 0.1), rgba(67, 97, 238, 0.1));
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
 }
 
-.project-image img {
-    max-width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s;
+.project-card-img img {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
 }
 
-.project-card:hover .project-image img {
-    transform: scale(1.05);
+.project-card:hover .project-card-img img {
+    transform: scale(1.08);
 }
 
-.project-content {
-    padding: 3rem 3rem 3rem 1rem;
+/* Text body */
+.project-card-body {
+    padding: 1.25rem 1.25rem 1.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 0.5rem;
+    flex: 1;
 }
 
-.project-content h3 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+.project-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(76, 201, 240, 0.1);
+    border: 1px solid rgba(76, 201, 240, 0.2);
+    border-radius: 20px;
+    padding: 3px 10px;
+    display: inline-block;
+    align-self: flex-start;
 }
 
-.project-content p {
+.project-card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.project-card-body p {
     color: var(--text-muted);
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.project-link:hover {
+    gap: 10px;
+    color: #fff;
 }
 
 /* Team */
@@ -1028,27 +1072,6 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-    .project-card {
-        grid-template-columns: 1fr;
-    }
-    .project-image {
-        padding: 2rem;
-    }
-    .project-content {
-        padding: 1.5rem 2rem 2rem;
-        text-align: center;
-    }
-    .project-content h3 {
-        font-size: 1.6rem;
-    }
-    .project-content p {
-        font-size: 1rem;
-    }
-    .project-content .btn {
-        align-self: center !important;
-    }
-}
 
 @media (max-width: 768px) {
     .hero h1 {
