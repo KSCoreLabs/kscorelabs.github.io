@@ -36,6 +36,57 @@
             <li><a href="#team">Team</a></li>
             <li><a href="#works">Our Works</a></li>
             <li><a href="#contact">Contact</a></li>
+            <!-- Social Dropdown -->
+            <li class="nav-social-dropdown" id="social-dropdown-li">
+                <button class="nav-social-btn" id="social-toggle" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa-solid fa-share-nodes"></i>
+                    Social
+                    <i class="fa-solid fa-chevron-down nav-chevron" id="social-chevron"></i>
+                </button>
+                <div class="social-dropdown-menu" id="social-menu" role="menu">
+                    <div class="sdm-header">Connect With KSCoreLabs</div>
+                    <a href="https://kscorelabs.github.io/" target="_blank" class="sdm-item sdm-website" role="menuitem">
+                        <span class="sdm-icon"><i class="fa-solid fa-globe"></i></span>
+                        <span class="sdm-info">
+                            <span class="sdm-label">Official Website</span>
+                            <span class="sdm-sub">kscorelabs.github.io</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sdm-ext"></i>
+                    </a>
+                    <a href="https://instagram.com/kscorelabs" target="_blank" class="sdm-item sdm-insta" role="menuitem">
+                        <span class="sdm-icon"><i class="fa-brands fa-instagram"></i></span>
+                        <span class="sdm-info">
+                            <span class="sdm-label">Instagram</span>
+                            <span class="sdm-sub">@kscorelabs</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sdm-ext"></i>
+                    </a>
+                    <a href="https://www.facebook.com/KrishnaSingh0006" target="_blank" class="sdm-item sdm-facebook" role="menuitem">
+                        <span class="sdm-icon"><i class="fa-brands fa-facebook-f"></i></span>
+                        <span class="sdm-info">
+                            <span class="sdm-label">Facebook</span>
+                            <span class="sdm-sub">kscorelabs-Developer Profile</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sdm-ext"></i>
+                    </a>
+                    <a href="https://x.com/kscorelabs" target="_blank" class="sdm-item sdm-twitter" role="menuitem">
+                        <span class="sdm-icon"><i class="fa-brands fa-x-twitter"></i></span>
+                        <span class="sdm-info">
+                            <span class="sdm-label">Twitter / X</span>
+                            <span class="sdm-sub">@kscorelabs</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sdm-ext"></i>
+                    </a>
+                    <a href="https://github.com/kscorelabs" target="_blank" class="sdm-item sdm-github" role="menuitem">
+                        <span class="sdm-icon"><i class="fa-brands fa-github"></i></span>
+                        <span class="sdm-info">
+                            <span class="sdm-label">GitHub</span>
+                            <span class="sdm-sub">kscorelabs</span>
+                        </span>
+                        <i class="fa-solid fa-arrow-up-right-from-square sdm-ext"></i>
+                    </a>
+                </div>
+            </li>
         </ul>
     </nav>
 
@@ -156,18 +207,76 @@
    
     <section id="contact">
         <h2 class="section-title reveal">Connect With Us</h2>
-        <p class="section-subtitle reveal">Have a question or want to collaborate? Reach out to KSCoreLabs on our official channels.</p>
-        
-        <div class="contact-container reveal">
-            <h3>Get in touch</h3>
-            <div class="contact-links">
-                <a href="mailto:kscorelabs@gmail.com" class="social-box">
-                    <i class="fa-solid fa-envelope"></i> kscorelabs@gmail.com
-                </a>
+        <p class="section-subtitle reveal">Have a question or want to collaborate? Drop us a message — we'll get back to you.</p>
+
+        <!-- ── Contact Form ── -->
+        <div class="cf-wrapper reveal">
+
+            <!-- Left: info panel -->
+            <div class="cf-info">
+                <div class="cf-info-badge"><i class="fa-solid fa-satellite-dish"></i> Let's Talk</div>
+                <h3 class="cf-info-title">Get In Touch<br>With <span>KSCoreLabs</span></h3>
+                <p class="cf-info-desc">Whether it's feedback, a collaboration idea, or just a hello — our inbox is always open.</p>
+
+                <div class="cf-contact-row">
+                    <span class="cf-contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <a href="mailto:kscorelabs@gmail.com" class="cf-contact-text">kscorelabs@gmail.com</a>
+                </div>
+
+
+                <div class="cf-decorative-dots">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+
+            <!-- Right: form -->
+            <div class="cf-form-panel">
+                <form id="contact-form" novalidate>
+                    <div class="cf-field-row">
+                        <div class="cf-field">
+                            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="off">
+                            <label for="cf-name"><i class="fa-solid fa-user"></i> Your Name</label>
+                            <span class="cf-line"></span>
+                        </div>
+                        <div class="cf-field">
+                            <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="off">
+                            <label for="cf-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                            <span class="cf-line"></span>
+                        </div>
+                    </div>
+                    <div class="cf-field">
+                        <input type="text" id="cf-subject" name="subject" placeholder=" " autocomplete="off">
+                        <label for="cf-subject"><i class="fa-solid fa-tag"></i> Subject (optional)</label>
+                        <span class="cf-line"></span>
+                    </div>
+                    <div class="cf-field">
+                        <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
+                        <label for="cf-message"><i class="fa-solid fa-message"></i> Your Message</label>
+                        <span class="cf-line"></span>
+                    </div>
+
+                    <button type="submit" class="cf-submit-btn" id="cf-submit">
+                        <span class="cf-btn-text">Send Message <i class="fa-solid fa-paper-plane"></i></span>
+                        <span class="cf-btn-loading" hidden><i class="fa-solid fa-circle-notch fa-spin"></i> Sending…</span>
+                    </button>
+
+                    <!-- Success / Error feedback -->
+                    <div class="cf-feedback cf-success" id="cf-success" hidden style="display:none">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Message sent! We'll get back to you soon.</span>
+                    </div>
+                    <div class="cf-feedback cf-error" id="cf-error" hidden style="display:none">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Something went wrong. Please try again or email us directly.</span>
+                    </div>
+                </form>
             </div>
         </div>
 
-        <div class="social-links-container reveal">
+        <!-- ── Existing channels ── -->
+        <div class="social-links-container reveal" style="margin-top:5rem;">
             <h3>Follow Our Journey</h3>
             <div class="social-links">
                 <a href="https://www.facebook.com/kscorelabs" target="_blank" class="social-link" title="Facebook">
