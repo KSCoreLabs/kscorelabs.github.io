@@ -202,5 +202,3 @@ window.addEventListener('scroll', reveal);
     }
 }());
 
-
-
