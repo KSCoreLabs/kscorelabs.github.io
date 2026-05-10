@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - KSCoreLabs</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .about-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 5% 60px;
+            position: relative;
+        }
+
+        .about-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            background: linear-gradient(90deg, var(--text-main) 0%, var(--primary) 50%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.8s ease;
+        }
+
+        .about-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            animation: fadeUp 0.8s 0.2s ease both;
+        }
+
+        .core-values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto 5rem;
+            padding: 0 5%;
+        }
+
+        .value-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeUp 0.8s 0.4s ease both;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(76, 201, 240, 0.3);
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: rgba(76, 201, 240, 0.1);
+            color: var(--primary);
+            border-radius: 18px;
+            transition: all 0.3s;
+        }
+
+        .value-card:hover .value-icon {
+            background: var(--primary);
+            color: #fff;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .value-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .value-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .mission-section {
+            max-width: 900px;
+            margin: 0 auto 8rem;
+            padding: 4rem;
+            background: linear-gradient(160deg, rgba(67, 97, 238, 0.08) 0%, rgba(76, 201, 240, 0.04) 100%);
+            border: 1px solid rgba(76, 201, 240, 0.15);
+            border-radius: 32px;
+            text-align: center;
+            animation: fadeUp 0.8s 0.6s ease both;
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            color: var(--text-main);
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .mission-section {
+                padding: 2.5rem 1.5rem;
+                margin: 0 5% 5rem;
+            }
+            .mission-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+    <div class="bg-glow-2"></div>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="Images/IMG_20260423_155552.webp" alt="KSCoreLabs Logo">
+            KSCoreLabs
+        </a>
+        <div class="mobile-menu-btn" id="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" style="color: var(--primary);">About Us</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="index.html#works">Our Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="about-hero">
+        <div class="hero-badge">OUR STORY</div>
+        <h1 class="about-title">Building Trust Through Code</h1>
+        <p class="about-subtitle">KSCoreLabs is an independent development studio dedicated to crafting robust, secure, and user-friendly mobile applications that put your privacy first. We build the tools that empower you to take control of your digital life.</p>
+    </header>
+
+    <div class="core-values">
+        <div class="value-card">
+            <div class="value-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3 class="value-title">Privacy First</h3>
+            <p class="value-desc">Your data belongs to you. We design all our applications with zero-data-collection architectures, ensuring that your personal information never leaves your device without your explicit consent.</p>
+        </div>
+        
+        <div class="value-card">
+            <div class="value-icon" style="color: var(--secondary);"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3 class="value-title">Relentless Innovation</h3>
+            <p class="value-desc">We don't just follow trends; we create solutions for real-world problems. By exploring the cutting edge of mobile development, we deliver applications that feel modern, fluid, and ahead of the curve.</p>
+        </div>
+
+        <div class="value-card">
+            <div class="value-icon" style="color: var(--accent);"><i class="fa-solid fa-gem"></i></div>
+            <h3 class="value-title">Premium Experience</h3>
+            <p class="value-desc">Security shouldn't be complicated or ugly. We believe in marrying robust functionality with stunning, intuitive user interfaces, ensuring our apps are as beautiful as they are powerful.</p>
+        </div>
+    </div>
+
+    <section class="mission-section">
+        <i class="fa-solid fa-quote-left mission-icon"></i>
+        <p class="mission-text">"KSCoreLabs started as a one-person studio driven by a singular obsession: to build applications that respect the user. No hidden tracking, no bloated code. Just pure, functional tools that bring peace of mind."</p>
+        <div style="margin-top: 2rem; color: var(--primary); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem;">— Krishna Singh, Founder</div>
+    </section>
+
+    <footer style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; gap: 2rem; justify-content: center;">
+            <a href="contact.html" style="color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">Contact Us</a>
+        </div>
+        <p style="color: var(--text-muted);">&copy; 2026 KSCoreLabs. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

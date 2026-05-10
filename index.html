@@ -33,9 +33,10 @@
         </div>
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#works">Our Works</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
             <!-- Social Dropdown -->
             <li class="nav-social-dropdown" id="social-dropdown-li">
                 <button class="nav-social-btn" id="social-toggle" aria-haspopup="true" aria-expanded="false">
@@ -210,99 +211,15 @@
     </section>
 
    
-    <section id="contact">
-        <h2 class="section-title reveal">Connect With Us</h2>
-        <p class="section-subtitle reveal">Have a question or want to collaborate? Drop us a message — we'll get back to you.</p>
 
-        <!-- ── Contact Form ── -->
-        <div class="cf-wrapper reveal">
-
-            <!-- Left: info panel -->
-            <div class="cf-info">
-                <div class="cf-info-badge"><i class="fa-solid fa-satellite-dish"></i> Let's Talk</div>
-                <h3 class="cf-info-title">Get In Touch<br>With <span>KSCoreLabs</span></h3>
-                <p class="cf-info-desc">Whether it's feedback, a collaboration idea, or just a hello — our inbox is always open.</p>
-
-                <div class="cf-contact-row">
-                    <span class="cf-contact-icon"><i class="fa-solid fa-envelope"></i></span>
-                    <a href="mailto:kscorelabs@gmail.com" class="cf-contact-text">kscorelabs@gmail.com</a>
-                </div>
-
-
-                <div class="cf-decorative-dots">
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <!-- Right: form -->
-            <div class="cf-form-panel">
-                <form id="contact-form" novalidate>
-                    <div class="cf-field-row">
-                        <div class="cf-field">
-                            <input type="text" id="cf-name" name="name" placeholder=" " required autocomplete="off">
-                            <label for="cf-name"><i class="fa-solid fa-user"></i> Your Name</label>
-                            <span class="cf-line"></span>
-                        </div>
-                        <div class="cf-field">
-                            <input type="email" id="cf-email" name="email" placeholder=" " required autocomplete="off">
-                            <label for="cf-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
-                            <span class="cf-line"></span>
-                        </div>
-                    </div>
-                    <div class="cf-field">
-                        <input type="text" id="cf-subject" name="subject" placeholder=" " autocomplete="off">
-                        <label for="cf-subject"><i class="fa-solid fa-tag"></i> Subject (optional)</label>
-                        <span class="cf-line"></span>
-                    </div>
-                    <div class="cf-field">
-                        <textarea id="cf-message" name="message" rows="5" placeholder=" " required></textarea>
-                        <label for="cf-message"><i class="fa-solid fa-message"></i> Your Message</label>
-                        <span class="cf-line"></span>
-                    </div>
-
-                    <button type="submit" class="cf-submit-btn" id="cf-submit">
-                        <span class="cf-btn-text">Send Message <i class="fa-solid fa-paper-plane"></i></span>
-                        <span class="cf-btn-loading" hidden><i class="fa-solid fa-circle-notch fa-spin"></i> Sending…</span>
-                    </button>
-
-                    <!-- Success / Error feedback -->
-                    <div class="cf-feedback cf-success" id="cf-success" hidden style="display:none">
-                        <i class="fa-solid fa-circle-check"></i>
-                        <span>Message sent! We'll get back to you soon.</span>
-                    </div>
-                    <div class="cf-feedback cf-error" id="cf-error" hidden style="display:none">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                        <span>Something went wrong. Please try again or email us directly.</span>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- ── Existing channels ── -->
-        <div class="social-links-container reveal" style="margin-top:5rem;">
-            <h3>Follow Our Journey</h3>
-            <div class="social-links">
-                <a href="https://www.facebook.com/SinghKrishna0006" target="_blank" class="social-link" title="Facebook">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </a>
-                <a href="https://x.com/kscorelabs" target="_blank" class="social-link" title="X (Twitter)">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="https://instagram.com/kscorelabs" target="_blank" class="social-link" title="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="https://github.com/kscorelabs" target="_blank" class="social-link" title="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </section>
 
     
-    <footer>
-        <p>&copy; 2026 KSCoreLabs. All rights reserved.</p>
+    <footer style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
+        <div style="display: flex; gap: 2rem; justify-content: center;">
+            <a href="about.html" style="color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">About Us</a>
+            <a href="contact.html" style="color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">Contact Us</a>
+        </div>
+        <p style="color: var(--text-muted);">&copy; 2026 KSCoreLabs. All rights reserved.</p>
     </footer>
 
    
