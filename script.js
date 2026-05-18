@@ -202,3 +202,35 @@ window.addEventListener('scroll', reveal);
     }
 }());
 
+// ── Theme Toggle ──────────────────────────────────────────────
+(function() {
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    
+    // Check saved theme, default to dark
+    let savedTheme = localStorage.getItem('kscorelabs-theme');
+    if (!savedTheme) {
+        savedTheme = 'dark';
+        localStorage.setItem('kscorelabs-theme', 'dark');
+    }
+
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme !== 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('kscorelabs-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('kscorelabs-theme', 'dark');
+            }
+        });
+    });
+})();

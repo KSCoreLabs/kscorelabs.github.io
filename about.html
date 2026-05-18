@@ -169,9 +169,6 @@
             <img src="Images/IMG_20260423_155552.webp" alt="KSCoreLabs Logo">
             KSCoreLabs
         </a>
-        <div class="mobile-menu-btn" id="menu-btn">
-            <i class="fa-solid fa-bars"></i>
-        </div>
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html" style="color: var(--primary);">About Us</a></li>
@@ -179,6 +176,18 @@
             <li><a href="index.html#works">Our Works</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
+            <!-- Theme Toggle -->
+            <div class="nav-theme-toggle">
+                <button class="theme-toggle-btn theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                </button>
+            </div>
+            <div class="mobile-menu-btn" id="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
     </nav>
 
     <header class="about-hero">
@@ -213,11 +222,22 @@
         <div style="margin-top: 2rem; color: var(--primary); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.85rem;">— Krishna Singh, Founder</div>
     </section>
 
-    <footer style="text-align: center; padding: 3rem 0; border-top: 1px solid var(--border); margin-top: 5rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem;">
-        <div style="display: flex; gap: 2rem; justify-content: center;">
-            <a href="contact.html" style="color: var(--text-main); text-decoration: none; font-weight: 600; font-size: 1.05rem; transition: color 0.3s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">Contact Us</a>
+    <footer class="site-footer">
+        
+        <div class="footer-socials-centered">
+            <a href="https://kscorelabs.github.io/" target="_blank" class="fs-icon website" title="Official Website"><i class="fa-solid fa-globe"></i></a>
+            <a href="https://instagram.com/kscorelabs" target="_blank" class="fs-icon insta" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/SinghKrishna0006" target="_blank" class="fs-icon facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://x.com/kscorelabs" target="_blank" class="fs-icon twitter" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/kscorelabs" target="_blank" class="fs-icon github" title="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
-        <p style="color: var(--text-muted);">&copy; 2026 KSCoreLabs. All rights reserved.</p>
+
+        <div class="footer-links-centered">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        
+        <p class="footer-bottom-text">&copy; 2026 KSCoreLabs. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
